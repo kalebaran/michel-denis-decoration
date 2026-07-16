@@ -1,44 +1,58 @@
 # Site Atelier Michel Denis — guide pour modifier le site vous-même
 
 Ce site n'a **pas besoin d'un informaticien** pour être modifié au quotidien.
-L'idée est simple : vous récupérez le site sur votre ordinateur, puis vous **demandez les changements en français** à un assistant (Claude Code), comme si vous parliez à quelqu'un. Il modifie le site pour vous.
+L'idée est simple : vous récupérez le site sur votre ordinateur, puis vous **demandez les changements en français** à un assistant (Claude Code), comme si vous parliez à quelqu'un. Il modifie le site — et peut même l'enregistrer sur internet — à votre place.
 
-Ce guide se lit en entier une première fois. Ensuite, seule l'**Étape 3** vous servira à chaque modification.
+Ce guide se lit en entier une première fois. Ensuite, seule l'**Étape 4** vous servira à chaque modification.
 
----
-
-## Étape 1 — Récupérer le site sur votre ordinateur
-
-1. Rendez-vous sur la page du site sur **GitHub** (le lien vous a été communiqué, il ressemble à `github.com/…/michel-denis-decoration`).
-2. Cliquez sur le bouton vert **« Code »**.
-3. Cliquez sur **« Download ZIP »**.
-4. Un fichier `.zip` se télécharge. **Double-cliquez dessus** pour l'ouvrir : vous obtenez un dossier `michel-denis-decoration`.
-5. Placez ce dossier à un endroit facile à retrouver, par exemple sur le **Bureau**.
-
-> 💡 Pour voir à quoi ressemble le site, ouvrez le dossier et double-cliquez sur le fichier **`index.html`** : il s'ouvre dans votre navigateur (Chrome, Safari, Firefox…). C'est la page d'accueil.
+> 💡 **Bon à savoir :** un fichier `CLAUDE.md` est déjà présent dans le site. Claude Code le lit tout seul : il connaît donc déjà le projet et sait comment le récupérer, le prévisualiser et l'enregistrer sur GitHub. La plupart du temps, il vous suffit de **lui demander**.
 
 ---
 
-## Étape 2 — Installer Claude Code (à faire une seule fois)
+## Étape 1 — Installer les deux outils (à faire une seule fois)
 
-Claude Code est l'assistant qui va modifier le site à votre place.
+Deux logiciels gratuits à installer, une seule fois :
 
-1. Allez sur **https://claude.com/claude-code**.
-2. Créez un compte Claude si vous n'en avez pas encore (une adresse e-mail suffit).
-3. Suivez les instructions d'installation proposées sur la page pour votre ordinateur (**Mac** ou **Windows**).
-4. Une fois installé, ouvrez Claude Code.
+1. **Git** — sert à récupérer le site et à envoyer vos modifications sur internet.
+   Rendez-vous sur **https://git-scm.com/downloads**, téléchargez la version pour votre ordinateur (Mac ou Windows) et installez-la (laissez les options par défaut).
 
-> 💡 C'est la seule étape un peu « installation ». Vous ne la faites qu'une fois. En cas de doute, la page officielle explique tout pas à pas.
+2. **Claude Code** — l'assistant qui modifie le site pour vous.
+   Rendez-vous sur **https://claude.com/claude-code**, créez un compte (une adresse e-mail suffit) et suivez les instructions d'installation.
+
+> 💡 C'est la seule étape « installation ». Vous ne la faites qu'une fois.
 
 ---
 
-## Étape 3 — Demander une modification
+## Étape 2 — Récupérer le site sur votre ordinateur
+
+Le site est stocké sur GitHub, ici : **https://github.com/kalebaran/michel-denis-decoration**
+
+Le plus simple : **demandez-le à Claude Code**. Ouvrez-le et écrivez :
+
+> « Récupère (clone) le site depuis https://github.com/kalebaran/michel-denis-decoration sur mon ordinateur. »
+
+Si vous préférez le faire vous-même, ouvrez un **terminal** (Mac : application « Terminal » ; Windows : « PowerShell »), placez-vous là où vous voulez ranger le site, puis tapez :
+
+```
+git clone https://github.com/kalebaran/michel-denis-decoration.git
+```
+
+Vous obtenez un dossier `michel-denis-decoration` contenant tout le site.
+
+> 💡 Vous ne refaites cette étape **qu'une seule fois**. Ensuite, le dossier reste sur votre ordinateur.
+
+---
+
+## Étape 3 — Ouvrir le site avec Claude Code
+
+Ouvrez **Claude Code** et indiquez-lui le dossier `michel-denis-decoration` récupéré à l'étape précédente. C'est tout : il est prêt à travailler.
+
+---
+
+## Étape 4 — Demander une modification
 
 C'est ici que tout se passe, à chaque fois que vous voulez changer quelque chose.
-
-1. Ouvrez **Claude Code**.
-2. Indiquez-lui le dossier du site (celui récupéré à l'Étape 1, par exemple sur le Bureau).
-3. Écrivez votre demande **en français, simplement**, puis validez. Attendez qu'il ait terminé.
+Écrivez votre demande **en français, simplement**, puis validez. Attendez qu'il ait terminé.
 
 ### Exemples de demandes que vous pouvez écrire telles quelles
 
@@ -50,42 +64,38 @@ C'est ici que tout se passe, à chaque fois que vous voulez changer quelque chos
 - « Change la couleur des boutons pour un ton plus foncé. »
 - « Ajoute une page pour une nouvelle prestation : la restauration de chaises. »
 
-> 💡 Vous pouvez discuter : s'il vous propose quelque chose qui ne convient pas, dites-lui simplement « non, plutôt comme ça… ». Vous ne risquez rien : tant que le site n'est pas remis en ligne, seul votre exemplaire sur l'ordinateur est modifié.
+> 💡 Vous pouvez discuter : s'il propose quelque chose qui ne convient pas, dites simplement « non, plutôt comme ça… ». Vous ne risquez rien : tant que le site n'est pas renvoyé sur internet, seul votre exemplaire sur l'ordinateur est modifié.
 
 ### Voir le résultat en local
 
-Le plus rapide : **rafraîchissez la page** dans votre navigateur (ou rouvrez `index.html`).
+Le plus rapide : rouvrez le fichier `index.html` dans votre navigateur.
 
-Pour une prévisualisation fidèle (la carte de la page Contact, notamment, s'affiche mieux ainsi), lancez le site comme un vrai site web :
+Pour une prévisualisation fidèle (la carte de la page Contact s'affiche mieux ainsi), demandez à Claude Code **« montre-moi le site en local »**. Il lancera la commande suivante pour vous :
 
-1. Dans le dossier du site, ouvrez un **terminal** (sur Mac : application « Terminal » ; sur Windows : « PowerShell »).
-2. Copiez-collez cette commande, puis validez :
+```
+python3 -m http.server 8000
+```
 
-   ```
-   python3 -m http.server 8000
-   ```
-
-3. Ouvrez votre navigateur à l'adresse : **http://localhost:8000**
-4. Pour arrêter, revenez au terminal et appuyez sur **Ctrl + C**.
-
-> 💡 Vous n'êtes pas obligé(e) de retenir cette commande : vous pouvez aussi écrire à Claude Code **« montre-moi le site en local »**, il s'en charge.
+Ouvrez alors votre navigateur à l'adresse **http://localhost:8000**.
 
 ---
 
-## Sauvegarder vos changements sur GitHub
+## Étape 5 — Enregistrer les changements et mettre à jour internet
 
-Tant que vous n'avez rien renvoyé, vos modifications restent **uniquement sur votre ordinateur**. Pour les sauvegarder sur GitHub (et garder l'historique des versions), demandez simplement à Claude Code :
+Quand tout vous convient, il faut **renvoyer vos modifications sur GitHub** : c'est ce qui met le site à jour et sauvegarde vos versions.
+
+Le plus simple : **demandez-le à Claude Code**.
 
 > « Enregistre mes changements et envoie-les sur GitHub. »
 
-Il fera l'opération technique (ce qu'on appelle un *commit* puis un *push*) à votre place.
+Il fera l'opération à votre place (les commandes techniques `git add`, `git commit` puis `git push`).
 
----
+Si vous préférez le faire vous-même, dans le terminal placé dans le dossier du site :
 
-## Mettre les changements en ligne
+```
+git add -A
+git commit -m "Décrivez ici votre changement"
+git push
+```
 
-Quand tout vous convient et que c'est sauvegardé, demandez à Claude Code :
-
-> « Le site me convient, aide-moi à le mettre en ligne. »
-
-Il vous guidera. Vous n'avez **aucune commande technique à retenir** : il suffit de demander.
+> 💡 En résumé, à chaque modification : **Étape 4** (demander le changement) → **Étape 5** (« enregistre sur GitHub »). Rien d'autre à retenir.
