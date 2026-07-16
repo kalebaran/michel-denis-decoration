@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://www.michel-denis-decoration.fr/sitemap.xml
